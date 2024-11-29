@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DarwinPullaguariComplementario.Views.PrincipalPage"
+             Title="Gestion Usuarios">
+    <VerticalStackLayout Padding="20" Spacing="10">
+        <Button Text="Agregar Estudiante" Clicked="OnAgregarClicked"/>
+        <Button Text="Editar Estudiante" Clicked="OnEditarClicked"/>
+        <Button Text="Eliminar Estudiante" Clicked="OnEliminarClicked"/>
+        <ListView x:Name="EstudiantesList" SelectionMode="Single" ItemSelected="OnItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding Nombre}" FontAttributes="Bold" FontSize="16" />
+                            <Label Text="{Binding Apellido}" FontSize="14" />
+                            <Label Text="{Binding Curso}" FontSize="12" />
+                            <Label Text="{Binding Paralelo}" FontSize="12" />
+                            <Label Text="{Binding NOTA_FINAL, StringFormat='Nota Final: {0:F2}'}" FontSize="12" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button Text="Abrir Cámara" Clicked="OnAbrirCamaraClicked" BackgroundColor="Orange"/>
+
+    </VerticalStackLayout>
+</ContentPage>
